@@ -3,56 +3,59 @@
 //This program turns the RGB LED on and off
 
 int counter;
+const int RED = 5;
+const int GREEN = 6;
+const int BLUE = 7;
 
 void setup()
 {
-  pinMode(5, OUTPUT);//RED
-  pinMode(6, OUTPUT);//GREEN
-  pinMode(7, OUTPUT);//BLUE
+  pinMode(RED, OUTPUT);
+  pinMode(GREEN, OUTPUT);
+  pinMode(BLUE, OUTPUT);
 }
 
 void loop()
 {
   //Turns red during first cycle and yellow during second one
-  digitalWrite(5, HIGH);
+  digitalWrite(RED, HIGH);
   if (counter == 1)
   {
-    digitalWrite(6, HIGH);
+    digitalWrite(GREEN, HIGH);
   }
   delay(1000);
-  digitalWrite(5, LOW);
-  digitalWrite(6, LOW);
+  digitalWrite(RED, LOW);
+  digitalWrite(GREEN, LOW);
   
   //Turns green during first cycle and yellow during second one
-  digitalWrite(6, HIGH);
+  digitalWrite(GREEN, HIGH);
   if (counter == 1)
   {
-    digitalWrite(7, HIGH);
+    digitalWrite(BLUE, HIGH);
   }
   delay(1000);
-  digitalWrite(6, LOW);
-  digitalWrite(7, LOW);
+  digitalWrite(GREEN, LOW);
+  digitalWrite(BLUE, LOW);
   
   //Turns blue during first cycle and violet during second one
-  digitalWrite(7, HIGH);
+  digitalWrite(BLUE, HIGH);
   if (counter == 1)
   {
-    digitalWrite(5, HIGH);
+    digitalWrite(RED, HIGH);
   }
   delay(1000);
-  digitalWrite(5, LOW);
-  digitalWrite(7, LOW);
+  digitalWrite(RED, LOW);
+  digitalWrite(BLUE, LOW);
   
   //Turns white and black during second cycle
   if (counter == 1)
   {
-    digitalWrite(5, HIGH);
-    digitalWrite(6, HIGH);
-    digitalWrite(7, HIGH);
+    digitalWrite(RED, HIGH);
+    digitalWrite(GREEN, HIGH);
+    digitalWrite(BLUE, HIGH);
     delay(1000);
-    digitalWrite(5, LOW);
-    digitalWrite(6, LOW);
-    digitalWrite(7, LOW);
+    digitalWrite(RED, LOW);
+    digitalWrite(GREEN, LOW);
+    digitalWrite(BLUE, LOW);
     delay(1000);
     counter = -1;
   }
